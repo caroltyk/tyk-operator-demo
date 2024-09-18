@@ -11,4 +11,4 @@ patches:
         name: httpbin-api
       spec:
         proxy:
-          target_url: http://httpbin
+          target_url: http://httpbin.staging.svc
