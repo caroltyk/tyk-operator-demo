@@ -10,5 +10,8 @@ patches:
       metadata:
         name: httpbin-api
       spec:
+        tags:
+          - staging
+          - httpbin
         proxy:
           target_url: http://httpbin.staging.svc
