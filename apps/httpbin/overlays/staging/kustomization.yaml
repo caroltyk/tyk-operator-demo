@@ -3,3 +3,12 @@ kind: Kustomization
 resources:
 - ../../base
 namespace: staging
+patches:
+  - patch: |-
+      apiVersion: tyk.tyk.io/v1alpha1
+      kind: ApiDefinition
+      metadata:
+        name: httpbin-api
+      spec:
+        proxy:
+          target_url: http://httpbin
