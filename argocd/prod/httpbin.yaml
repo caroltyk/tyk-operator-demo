@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: httpbin-prod
+spec:
+  destination:
+    namespace: production
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: apps/httpbin/overlays/prod
+    repoURL: 'https://github.com/caroltyk/tyk-operator-demo'
+  sources: []
+  project: app
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: false
