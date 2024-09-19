@@ -21,7 +21,5 @@ patches:
         jwt_source: aHR0cDovL2tleWNsb2FrLmtleWNsb2FrL3JlYWxtcy9qd3Qtc3RhZ2luZy9wcm90b2NvbC9vcGVuaWQtY29ubmVjdC9jZXJ0cw==
         jwt_identity_base_field: sub
         jwt_policy_field_name: pol
-        jwt_default_policies:
-          - staging/jwt-policy
         proxy:
           target_url: http://httpbin.staging.svc
