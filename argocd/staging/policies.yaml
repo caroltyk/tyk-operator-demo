@@ -7,7 +7,7 @@ spec:
     namespace: staging
     server: 'https://kubernetes.default.svc'
   source:
-    path: infrastructure/policies/staging
+    path: policies/staging
     repoURL: 'https://github.com/caroltyk/tyk-operator-demo'
   sources: []
   project: app
