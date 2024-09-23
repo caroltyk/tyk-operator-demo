@@ -4,13 +4,16 @@ metadata:
   name: policies-prod
 spec:
   destination:
+    namespace: policies
     server: 'https://kubernetes.default.svc'
   source:
     path: policies/prod
     repoURL: 'https://github.com/caroltyk/tyk-operator-demo'
   sources: []
-  project: app
+  project: default
   syncPolicy:
     automated:
       prune: false
       selfHeal: false
+    syncOptions:
+      - CreateNamespace=true
