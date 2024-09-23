@@ -4,7 +4,6 @@ metadata:
   name: httpbin-staging
 spec:
   destination:
-    namespace: staging
     server: 'https://kubernetes.default.svc'
   source:
     path: apps/httpbin/overlays/staging

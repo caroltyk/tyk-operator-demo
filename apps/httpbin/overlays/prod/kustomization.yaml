@@ -2,26 +2,15 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
 - ../../base
-namespace: production
+replicas:
+- name: httpbin
+  count: 2
 patches:
-- patch: |-
-    apiVersion: tyk.tyk.io/v1alpha1
+- path: api_auth.yaml
+  target:
     kind: ApiDefinition
-    metadata:
-      name: httpbin-api
-    spec:
-      tags:
-        - production
-        - httpbin
-      detailed_tracing: false
-      use_keyless: false
-      enable_jwt: true
-      strip_auth_data: false
-      jwt_signing_method: rsa
-      jwt_source: aHR0cDovL2tleWNsb2FrLmtleWNsb2FrL3JlYWxtcy9qd3QvcHJvdG9jb2wvb3BlbmlkLWNvbm5lY3QvY2VydHM=
-      jwt_identity_base_field: sub
-      jwt_policy_field_name: pol
-      jwt_default_policies:
-        - production/jwt-policy
-      proxy:
-        target_url: http://httpbin.production.svc
+    labelSelector: app=httpbin
+- path: api_config.yaml
+  target:
+    kind: ApiDefinition
+    labelSelector: app=httpbin
