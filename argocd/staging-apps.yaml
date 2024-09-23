@@ -1,0 +1,10 @@
+project: default
+source:
+  repoURL: https://github.com/caroltyk/tyk-operator-demo/
+  path: argocd/staging
+  targetRevision: main
+destination:
+  server: https://kubernetes.default.svc
+  namespace: argocd
+syncPolicy:
+  automated: {}
