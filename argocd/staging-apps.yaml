@@ -1,10 +1,16 @@
-project: default
-source:
-  repoURL: https://github.com/caroltyk/tyk-operator-demo/
-  path: argocd/staging
-  targetRevision: main
-destination:
-  server: https://kubernetes.default.svc
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: 'staging-apps'
   namespace: argocd
-syncPolicy:
-  automated: {}
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/TykTechnologies/tyk-operator-demo/
+    path: argocd/staging
+    targetRevision: main
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd
+  syncPolicy:
+    automated: {}

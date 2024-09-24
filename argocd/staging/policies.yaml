@@ -5,10 +5,10 @@ metadata:
 spec:
   destination:
     namespace: policies-staging
-    server: 'https://kubernetes.default.svc'
+    server: https://kubernetes.default.svc
   source:
     path: policies/staging
-    repoURL: 'https://github.com/caroltyk/tyk-operator-demo'
+    repoURL: https://github.com/TykTechnologies/tyk-operator-demo
   sources: []
   project: default
   syncPolicy:

@@ -5,10 +5,10 @@ metadata:
 spec:
   destination:
     namespace: httpbin-staging
-    server: 'https://kubernetes.default.svc'
+    server: https://kubernetes.default.svc
   source:
     path: apps/httpbin/overlays/staging
-    repoURL: 'https://github.com/caroltyk/tyk-operator-demo'
+    repoURL: https://github.com/TykTechnologies/tyk-operator-demo
   sources: []
   project: default
   syncPolicy:
